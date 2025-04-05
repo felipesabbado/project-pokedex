@@ -6,12 +6,10 @@ pokeApi.getPokemonDetails(url)
     .then((pokemon) => {
         let pokeHtml = `
             <div class="${pokemon.type}" id="header">
-                <a href="#">Voltar</a>
+                <a href="javascript:history.back()">Voltar</a>
                 <h1>${pokemon.name}</h1><span>#${pokemon.number}</span>
                 <p>${pokemon.types}</p>
-                <div class="pokemon detail">
-                    <img src="${pokemon.sprites[2]}" alt="${pokemon.name}">
-                </div>
+                <img src="${pokemon.sprites[2]}" alt="${pokemon.name}">
             </div>
             <div id="stats">
                 <p>Weight: ${pokemon.weight}kg</p>
