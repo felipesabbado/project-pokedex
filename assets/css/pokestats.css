@@ -1,3 +1,12 @@
+#pokemonStats {
+    max-width: 500px;
+    margin: auto;
+}
+
+#header #name {
+    text-transform: capitalize;
+}
+
 #header img {
     display: block;
     margin: auto;
