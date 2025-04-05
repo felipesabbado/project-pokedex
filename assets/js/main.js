@@ -27,9 +27,8 @@ function loadPokemonItens(offset, limit) {
 }
 
 function openPokemonDetailsPage(pokemonNumber) {
-    // var number = JSON.stringify(pokemonNumber);
     sessionStorage.setItem('pokemonNumber', pokemonNumber);
-    location.href="pokemon-page.html"/*?pokemonNumber="+pokemonNumber*/
+    location.href="pokemon-page.html"
 }
 
 loadPokemonItens(offset, limit)
