@@ -6,15 +6,29 @@ pokeApi.getPokemonDetails(url)
     .then((pokemon) => {
         let pokeHtml = `
             <div class="${pokemon.type}" id="header">
-                <a href="javascript:history.back()">Voltar</a>
-                <h1 id="name">${pokemon.name}</h1><span>#${pokemon.number}</span>
-                <p>${pokemon.types}</p>
-                <img src="${pokemon.sprites[2]}" alt="${pokemon.name}">
+                <div id="back"><a href="javascript:history.back()">Voltar</a></div>
+                <span id="name">${pokemon.name}</span>
+                <span id="number">#${pokemon.number}</span>
+                <div class="detail">
+                    <ol class="types">
+                        ${pokemon.types
+                            .map((type) => `<li class="type ${type}">${type}</li>`)
+                            .join('')}
+                    </ol>
+                    <img src="${pokemon.sprites[2]}" alt="${pokemon.name}">
+                </div>
             </div>
             <div id="stats">
                 <p>Weight: ${pokemon.weight}kg</p>
                 <p>Height: ${pokemon.height}m</p>
-                <p>Abilities: ${pokemon.abilities}</p>
+                <div>
+                    Abilities:
+                    <ol>
+                        ${pokemon.abilities
+                            .map((ability) => `<li>${ability}</li>`)
+                            .join('')}
+                    </ol>
+                </div>
             </div>`
 
         pokemonStats.innerHTML = pokeHtml
